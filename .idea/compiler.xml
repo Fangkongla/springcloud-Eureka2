@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-consumer" />
+        <module name="eureka-first" />
+        <module name="eureka-server" />
+        <module name="service-provide" />
+        <module name="eureka-server2" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-first" target="1.8" />
+      <module name="eureka-parent" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="eureka-server2" target="1.8" />
+      <module name="service-consumer" target="1.8" />
+      <module name="service-provide" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka-first" options="-parameters" />
+      <module name="eureka-parent" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="eureka-server2" options="-parameters" />
+      <module name="service-consumer" options="-parameters" />
+      <module name="service-provide" options="-parameters" />
+    </option>
+  </component>
+</project>
