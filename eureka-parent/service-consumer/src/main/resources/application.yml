@@ -1,0 +1,11 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: service-consumer
+eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka,http://localhost:8762/eureka/
+      register-with-eureka: false #是否将自己注册到注册中心，默认为true
+      registry-fetch-interval-seconds: 10 #表示Eureka client 间隔多久去服务器拉取注册信息，默认为30秒
