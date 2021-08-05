@@ -32,7 +32,7 @@ public class OrderServiceImpl implements OrderService {
     public Order selectOrderById(Integer id) {
         return new Order(id,"order-001","中国",319949D,selectProductListByDiscoveryClient());
     }
-    private List<Product> selectProductListByDiscoveryClient(){
+    /*private List<Product> selectProductListByDiscoveryClient(){
         StringBuffer sb = null;
         //获取服务列表
         List<String> serviceIds  = discoveryClient.getServices();
@@ -69,6 +69,15 @@ public class OrderServiceImpl implements OrderService {
                 null,
                 new ParameterizedTypeReference<List<Product>>() {});
         return  response.getBody();
+    }*/
+    private List<Product> selectProductListByDiscoveryClient(){
+        //ResponseEntity 封装了返回数据
+        ResponseEntity<List<Product>> response = restTemplate.exchange(
+                "http://SERVICE-PROVIDER/product/list",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Product>>() {});
+                return  response.getBody();
     }
 
 }

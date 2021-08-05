@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: eureka-server #应用名称
+  #安全认证
+  security:
+    user:
+      name: root
+      password: 123456
   #配置注册中心
 #单点注册
 #eureka:
@@ -22,4 +27,7 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${server.port} #ip:port(ip定义规范)
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://root:123456@localhost:8761/eureka
+  server:
+    enable-self-preservation: false #true开启自我保护模式，false 关闭自我保护模式
+    eviction-interval-timer-in-ms: 60000 #清理间隔（单位：毫秒,默认是60*1000）
